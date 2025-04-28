@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>HelpDesk</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>HelpDesk</h1>
+      <div class="heder_btn">
+        <button class="add_btn" id="add_btn">Добавить тикет</button>
+      </div>
+      <ul id="ticket_list"></ul>
+    </div>
+
+    <!-- Модальное окно -->
+    <div class="modal" id="add_modal">
+      <div class="modal-content">
+        <form id="add_form">
+          <h2>Новый тикет</h2>
+          <input type="text" name="name" placeholder="Краткое описание" required />
+          <textarea name="description" placeholder="Подробное описание"></textarea>
+          <div class="modal-actions">
+            <button class="btn" type="submit">Сохранить</button>
+            <button class="btn" type="button" id="cancel_btn">Отмена</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Модальное окно подтверждения удаления -->
+    <div class="modal" id="confirm_modal">
+      <div class="modal-content">
+        <p>Вы уверены, что хотите удалить тикет?</p>
+        <div class="modal-actions">
+          <button id="confirm_delete_btn" class="btn">Удалить</button>
+          <button id="cancel_delete_btn" class="btn">Отмена</button>
+        </div>
+      </div>
+    </div>
+
+  </body>
+
+</html>
