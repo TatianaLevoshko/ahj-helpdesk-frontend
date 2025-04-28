@@ -1,25 +1,30 @@
-image: Ubuntu2204  # образ для сборки
+version: 1.0.{build}
+image: Ubuntu2004  # образ для сборки
 
-stack: node 20.11.0  # окружение
+stack: node 20  # окружение
 
 branches:
   only:
-    - main  # ветка git
+    - main  # только ветка main
 
-cache: node_modules  # кеширование
+cache: false  # временно отключить кеширование
 
 install:
-  - npm install  # команда установки зависимостей
+  - npm install
 
-build: off  # отключаем встроенную в appveyor систему сборки
+before_build:
+  - npm run lint  # линтинг перед сборкой
+
 
 build_script:
-  - npm run build   # команда сборки
+  - npm run build
+  - ls -la ./dist
+  
+artifacts:
+  - path: ./dist
+    name: Dist
 
-test_script:
-  - npm run lint  # скрипт тестирования
-
-deploy_script:  # скрипт развёртывания
+deploy_script:
   - git config --global credential.helper store
   - git config --global user.name AppVeyor
   - git config --global user.email ci@appveyor.com
