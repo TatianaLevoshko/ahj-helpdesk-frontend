@@ -1,7 +1,5 @@
-
-
-const BASE_URL =
-  process.env.NODE_ENV === 'production'
+const BASE_URL
+  = process.env.NODE_ENV === 'production'
     ? 'https://ЗАМЕНИТЬ НА АДРЕС СЕРВЕРА/tickets'
     : 'http://localhost:3000/tickets';
 
@@ -61,7 +59,7 @@ export async function editTicket(id, { name, description, status }) {
  */
 export async function deleteTicket(id) {
   const res = await fetch(`${BASE_URL}?method=deleteTicket&id=${id}`, {
-    method: 'POST'
+    method: 'POST',
   });
   if (!res.ok) throw new Error(`Error deleting ticket: ${res.status}`);
   return res.json();
