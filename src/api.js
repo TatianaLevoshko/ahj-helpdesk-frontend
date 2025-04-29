@@ -1,7 +1,4 @@
-const BASE_URL
-  = process.env.NODE_ENV === 'production'
-    ? 'https://ahj-helpdesk-backend-efdx.onrender.com/tickets'
-    : 'http://localhost:10000/tickets';
+const BASE_URL = 'https://ahj-helpdesk-backend-efdx.onrender.com/tickets';
 
 /**
  * Получить список тикетов (без description)
