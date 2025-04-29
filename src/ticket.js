@@ -66,7 +66,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Смена статуса
       li.querySelector('.ticket__checkbox').addEventListener('change', async (e) => {
-        await editTicket(ticket.id, { name: ticket.name, description: '', status: e.target.checked });
+        const full = await getTicketById(ticket.id);
+        await editTicket(ticket.id, {
+          name: full.name,
+          description: full.description,
+          status: e.target.checked,
+        });
         renderTickets();
       });
 
