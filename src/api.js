@@ -1,6 +1,6 @@
 const BASE_URL
   = process.env.NODE_ENV === 'production'
-    ? 'https://ЗАМЕНИТЬ НА АДРЕС СЕРВЕРА/tickets'
+    ? 'https://https://https://ahj-helpdesk-backend-efdx.onrender.com/tickets'
     : 'http://localhost:3000/tickets';
 
 /**
