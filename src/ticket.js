@@ -44,7 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Показать подробное описание (запрос к серверу)
       li.querySelector('.ticket-content').addEventListener('click', async (event) => {
-        // Если клик был по чекбоксу, кнопке или внутри .actions — игнорируем
         if (
           event.target.closest('.edit_btn')
           || event.target.closest('.delete_btn')
