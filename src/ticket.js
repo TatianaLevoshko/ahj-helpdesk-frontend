@@ -53,11 +53,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const descEl = li.querySelector('.ticket-desc');
-        if (!descEl.textContent) {
+
+        if (descEl.style.display === 'none') {
           const full = await getTicketById(ticket.id);
           descEl.textContent = full.description;
+          descEl.style.display = 'block';
         }
-        descEl.style.display = descEl.style.display === 'none' ? 'block' : 'none';
+        else {
+          descEl.style.display = 'none';
+        }
       });
 
       // Смена статуса
